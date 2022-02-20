@@ -1,0 +1,108 @@
+
+\documentclass[a4paper,12pt]{article}
+%%% Работа с русским языком
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в фомулах
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+%%% Дополнительная работа с математикой
+\usepackage{amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{amsmath}
+\usepackage{amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+\everymath{\displaystyle}
+%% Номера формул
+%\mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+
+%% Шрифты
+\usepackage{euscript}	 % Шрифт Евклид
+\usepackage{mathrsfs} % Красивый матшрифт
+
+%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+
+%% Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+	{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{Изображения/}{image}}  % папки с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков и таблиц текстом
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строк в таблице
+\usepackage[usenames,dvipsnames]{color}
+
+\usepackage{alltt}
+
+\usepackage{color} %% это для отображения цвета в коде
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings} %% собственно, это и есть пакет listings
+\begin{document}
+	
+	\title{Важные функции}
+	\section{Работа с массивами}
+	\subsection{Многочлены}
+	Элементы массива - коэффициенты, стоящие в порядке возрастания степеней.
+	\begin{alltt}
+		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_proizv}=\textcolor{Red}{function()}
+	\end{alltt}
+	Находит производную от многочлена. 
+	\begin{alltt}
+		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_vychisl}=\textcolor{Red}{function()}
+	\end{alltt}
+	Находит корни многочлена.
+	\begin{alltt}
+		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_txt}=\textcolor{Red}{function()}
+	\end{alltt}
+	TeX-представление многочлена.%%%???
+	\begin{alltt}
+		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_pervoobr}=\textcolor{Red}{function()}
+	\end{alltt}
+	Находит первообразную от многочлена.%%TODO в чёр разница то??
+	\begin{alltt}
+		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_txtmas}=\textcolor{Red}{function}()
+	\end{alltt}
+	TeX-представление многочлена.
+	\begin{alltt}
+		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mt_pryam}=\textcolor{Red}{function}()
+	\end{alltt}
+	Возвращает коэффициенты a и b прямой y=ax+b, проходящей через две первые точки.
+	\begin{alltt}
+		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{shuffle}=\textcolor{Red}{function}()
+	\end{alltt}	
+	Перемешивает массив случайным образом. Если b, то ещё и рекурсивно на один уровень.
+	\begin{alltt}
+		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{iz}=\textcolor{Red}{function}(p1)
+	\end{alltt}
+	Если p1 опущено, возвращает случайный элемент массива, иначе последовательность p1 неповторяющихся элементов массива.
+	\section{Работа с canvas}
+	\begin{alltt}
+		\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{drawLine}=\textcolor{Red}{function}(x1,y1,x2,y2)
+	\end{alltt}
+	Рисует линию из точки (x1,y1) в (x2,y2).
+	\begin{alltt}
+		\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{fillKrug}=\textcolor{Red}{function}(x,y,r)
+	\end{alltt}
+	Рисует круг с центром в (x,y) и радиусом r. 
+		\begin{alltt}
+		\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{drawArrow}=\textcolor{Red}{function}(x1, y1, x2, y2, arrowType)
+	\end{alltt}%%TODO Узнать зачем arrowType
+	Рисует стрелку из точки (x1,y1) в (x2,y2)
+	\begin{alltt}
+		\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{drawCoordPlane }=\textcolor{Red}{function}(w, h, kl, text, mash)
+	\end{alltt}
+	Рисует координатную плоскость. w и h  \-- её размеры, kl \-- объект с полями hor и ver(высота и ширина клетки), text \-- объект с полями x1 и y1(единичные отрезки типа string), sh1 и sh2 (шрифты для x1, y1, по умолчанию 12px) и mash - масштаб изображения (по умолчанию равно 1).
+	\begin{alltt}
+		\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{setkaVer2  }=\textcolor{Red}{function}(h, w, hor, ver, mash)
+	\end{alltt}
+	Рисует прямоугольную сетку. w и h  \-- её размеры, hor и ver \-- высота и ширина клетки, mash - масштаб (по умолчанию равно 1).
+	\section{}
+\end{document}
