@@ -104,5 +104,37 @@
 		\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{setkaVer2  }=\textcolor{Red}{function}(h, w, hor, ver, mash)
 	\end{alltt}
 	Рисует прямоугольную сетку. w и h  \-- её размеры, hor и ver \-- высота и ширина клетки, mash - масштаб (по умолчанию равно 1).
-	\section{}
+	\section{Работа с матрицами}
+
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{multiplyMatrix}(A,B)
+	\end{alltt}
+	Умножает матрицу A на B, возвращает результат в матрице C.
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{Determinant}(A)
+	\end{alltt}
+	Возвращает определитель матрицы A.
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{MatrixCofactor}(i,j,A)
+	\end{alltt}
+	Возвращает алгебраическое дополнение матрицы A.
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{AdjugateMatrix}(A)
+	\end{alltt}
+	Возвращает союзную(присоединенную) матрицу.
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{InverseMatrix}(B)
+	\end{alltt}
+	Возвращает обратную  к B матрицу.
+		\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{generateMatrix}(stroki,stolbcy,min,max,p1)
+	\end{alltt}
+	Генерирует матрицу из случайных чисел.
+	\section{Вспомогательные функции}
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{sluchch}(n,k,s)
+	\end{alltt}
+	Возвращает случайное число от n до k с шагом s(по умолчанию 1).
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{slKrome}(a,p1,p2,p3)
+	\end{alltt}
+	Возвращает случайное число, кроме a. Если a \-- массив, то не содержащееся в нём; Если число или строка, то не равное ему; Если функция, принимающая параметр - то не удовлетворяющее ей.
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{sluchDel}(a)
+	\end{alltt}
+	Случайный делитель числа a.
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{sluchiz}(a,n)
+	\end{alltt}
+	Возвращает массив из n случайных повторяющихся элементов массива a. 
 \end{document}
