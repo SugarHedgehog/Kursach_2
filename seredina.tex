@@ -104,6 +104,13 @@
 		\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{setkaVer2  }=\textcolor{Red}{function}(h, w, hor, ver, mash)
 	\end{alltt}
 	Рисует прямоугольную сетку. w и h  \-- её размеры, hor и ver \-- высота и ширина клетки, mash - масштаб (по умолчанию равно 1).
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{graph9AmarkCircles}(ct, XY, maxQuantity, radius)
+	\end{alltt}	
+	Рисует maxQuantity точек в координатах из двумерно массива XY радиусом radius.
+	%%Переписать!
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{graph9AdrawFunction}(ct, f, o)
+	\end{alltt}	
+	Рисует график f(x). Границы отображения задаются объектом o с полями maxX, maxY, minX, minY.
 	\section{Работа с матрицами}
 
 	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{multiplyMatrix}(A,B)
@@ -118,6 +125,9 @@
 	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{AdjugateMatrix}(A)
 	\end{alltt}
 	Возвращает союзную(присоединенную) матрицу.
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{rang_mat}(А)
+	Возвращает ранг матрицы A.
+	\end{alltt}
 	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{InverseMatrix}(B)
 	\end{alltt}
 	Возвращает обратную  к B матрицу.
@@ -136,5 +146,17 @@
 	Случайный делитель числа a.
 	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{sluchiz}(a,n)
 	\end{alltt}
-	Возвращает массив из n случайных повторяющихся элементов массива a. 
+	Возвращает массив из n случайных не повторяющихся элементов массива a. 
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{isZ}(n)
+	\end{alltt}
+	Возвращает true, если число n целое.
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{isPolnKvadr}(n)
+	\end{alltt}
+	Возвращает true, если число является полным квадратом.
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{slLetter}(b)
+	\end{alltt}
+	Возвращает случайную букву английского алфавита
+	\begin{alltt} 	\textcolor{Red}{function} \textcolor{Purple}{intPoints}(f,o)
+	\end{alltt}
+  	Возвращает двумерный массив из всех целых точек графика f(x).  Границы нахождения точек задаются объектом o с полями maxX, maxY, minX, minY.
 \end{document}
