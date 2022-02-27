@@ -49,173 +49,190 @@
 	
 	\title{Важные функции}
 	\section{Работа с массивами}
-	\subsection{Многочлены}
-	Элементы массива Array - коэффициенты, стоящие в порядке возрастания степеней.
-	\begin{alltt}
-		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_proizv}=\textcolor{Red}{function}()
-	\end{alltt}
-	Находит производную от многочлена. 
-	\begin{alltt}
-		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_vychisl}=\textcolor{Red}{function}()
-	\end{alltt}
-	Находит корни многочлена.
-	\begin{alltt}
-		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_txt}=\textcolor{Red}{function}()
-	\end{alltt}
-	TeX-представление многочлена.%%%???
-	\begin{alltt}
-		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_pervoobr}=\textcolor{Red}{function}()
-	\end{alltt}
-	Находит первообразную от многочлена.%%TODO в чёр разница то??
-	\begin{alltt}
-		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_txtmas}=\textcolor{Red}{function}()
-	\end{alltt}
-	TeX-представление многочлена.
-	\begin{alltt}
-		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mt_pryam}=\textcolor{Red}{function}()
-	\end{alltt}
-	Возвращает коэффициенты a и b прямой y=ax+b, проходящей через две первые точки.
-	\subsection{Вспомогательные функции для массивов}
-	\begin{alltt}
-		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{shuffle}=\textcolor{Red}{function}(b)
-	\end{alltt}	
-	Перемешивает массив случайным образом. Если b, то ещё и рекурсивно на один уровень.
-	\begin{alltt}
-		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{iz}=\textcolor{Red}{function}(p1)
-	\end{alltt}
-	Если p1 опущено, возвращает случайный элемент массива, иначе последовательность p1 неповторяющихся элементов массива.
+		\subsection{Многочлены}
+		Элементы одномерного массива Array - коэффициенты, стоящие в порядке возрастания степеней.
+			\begin{alltt}
+				\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_proizv}=\textcolor{Red}{function}(
+			\end{alltt}
+		Находит производную от многочлена. 
+			\begin{alltt}
+				\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_vychisl}=\textcolor{Red}{function}()
+			\end{alltt}
+		Находит корни многочлена.
+			\begin{alltt}
+				\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_txt}=\textcolor{Red}{function}()
+			\end{alltt}
+		TeX-представление многочлена.%%%???
+			\begin{alltt}
+				\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_pervoobr}=\textcolor{Red}{function}()
+			\end{alltt}
+		Находит первообразную от многочлена.%%TODO в чёр разница то??
+			\begin{alltt}
+				\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mn_txtmas}=\textcolor{Red}{function}()
+			\end{alltt}
+		TeX-представление многочлена.
+			\begin{alltt}
+				\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{mt_pryam}=\textcolor{Red}{function}()
+			\end{alltt}
+		Возвращает коэффициенты a и b прямой y=ax+b, проходящей через две первые точки.
+		\subsection{Вспомогательные функции для массивов}
+			\begin{alltt}
+				\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{shuffle}=\textcolor{Red}{function}(b)
+			\end{alltt}	
+		Перемешивает массив случайным образом. Если b, то ещё и рекурсивно на один уровень.
+			\begin{alltt}
+				\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{iz}=\textcolor{Red}{function}(p1)
+			\end{alltt}
+		Если p1 опущено, возвращает случайный элемент массива, иначе последовательность p1 неповторяющихся элементов массива.
+		\subsection{Матрицы}
+			\begin{alltt} 	
+				\textcolor{Red}{function} \textcolor{Purple}{multiplyMatrix}(A,B)
+			\end{alltt}
+		Умножает матрицу A на B, возвращает результат в матрице C.
+			\begin{alltt} 	
+				\textcolor{Red}{function} \textcolor{Purple}{Determinant}(A)
+			\end{alltt}
+		Возвращает определитель матрицы A.
+			\begin{alltt} 
+				\textcolor{Red}{function} \textcolor{Purple}{MatrixCofactor}(i,j,A)
+			\end{alltt}
+		Возвращает алгебраическое дополнение матрицы A.
+			\begin{alltt} 
+				\textcolor{Red}{function} \textcolor{Purple}{AdjugateMatrix}(A)
+			\end{alltt}
+		Возвращает союзную(присоединенную) матрицу.
+			\begin{alltt} 	
+				\textcolor{Red}{function} \textcolor{Purple}{rang_mat}(А)
+			\end{alltt}
+		Возвращает ранг матрицы A.
+			\begin{alltt} 	
+				\textcolor{Red}{function} \textcolor{Purple}{InverseMatrix}(B)
+			\end{alltt}
+		Возвращает обратную  к B матрицу.
+			\begin{alltt} 	
+				\textcolor{Red}{function} \textcolor{Purple}{generateMatrix}(stroki,stolbcy,min,max,p1)
+			\end{alltt}
+		Генерирует матрицу из случайных чисел.
 	\section{Работа с числами}
-	\begin{alltt}
-		\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{pow}=\textcolor{Red}{function}(n)
-	\end{alltt}
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{pow}=\textcolor{Red}{function}(n)
+		\end{alltt}
 	Возвращает число в степени n.
-	\begin{alltt}
-		\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{sqrt}=\textcolor{Red}{function}(n)
-	\end{alltt}
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{sqrt}=\textcolor{Red}{function}(n)
+		\end{alltt}
 	Возвращает квадратный корень из числа.
-	\begin{alltt}
-		\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{sqr}=\textcolor{Red}{function}()
-	\end{alltt}
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{sqr}=\textcolor{Red}{function}()
+		\end{alltt}
 	Возвращает квадрат числа.
-	\begin{alltt}
-		\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{abs}=\textcolor{Red}{function}()
-	\end{alltt}
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{abs}=\textcolor{Red}{function}()
+		\end{alltt}
 	Возвращает модуль числа.
-	\begin{alltt}
-		\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{floor}=\textcolor{Red}{function}()
-	\end{alltt}
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{floor}=\textcolor{Red}{function}()
+		\end{alltt}
 	Возвращает число, округленное до целого в меньшую сторону.
-	\begin{alltt}
-		\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{ceil}=\textcolor{Red}{function}()
-	\end{alltt}
-		Возвращает число, округленное до целого в большую сторону.
-	\begin{alltt}
-		\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{pm}=\textcolor{Red}{function}()
-	\end{alltt}
-	Случайным образом возвращает число или ему противоположное
-	\begin{alltt}
-	\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{texfracpi}=\textcolor{Red}{function}(p1)
-	\end{alltt}
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{ceil}=\textcolor{Red}{function}()
+		\end{alltt}
+	Возвращает число, округленное до целого в большую сторону.
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{pm}=\textcolor{Red}{function}()
+		\end{alltt}
+	Случайным образом возвращает число или ему противоположное.
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{ts}=\textcolor{Red}{function}()
+		\end{alltt}
+	Приводит число к стандартному виду (с десятичной запятой и не более чем 10 знаками после неё).
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{texfracpi}=\textcolor{Red}{function}(p1)
+		\end{alltt}
 	Возвращает TeX-представление дроби, у которой в числителе данное число, умноженное на $\pi$, а в знаменателе p1.
 	Случай p1=1 учитывается.
-	\begin{alltt}
-		\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{texsqrt}=\textcolor{Red}{function}(p1,p2)
-	\end{alltt}	
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{texsqrt}=\textcolor{Red}{function}(p1,p2)
+		\end{alltt}	
 	TeX-представление корня из данного числа.
 	Если данное число - полный квадрат, то корень из числа.
 	Если p1, то из-под корня будут вынесены возможные множители.
 	Если p1, p2 и из-под корня выносится единица, то она будет опущена.
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{isZ}=\textcolor{Red}{function}()
+		\end{alltt}	
+	Возвращает true, если число n целое.
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{isPolnKvadr}=\textcolor{Red}{function}()
+		\end{alltt}	
+	Возвращает true, если число является полным квадратом.
+	\section{Работа с текстом}
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{toZagl}=\textcolor{Red}{function}()
+		\end{alltt}	
+	Возвращает исходную строку с первой заглавной буквой.
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{esli}=\textcolor{Red}{function}()
+		\end{alltt}	
+	Возвращает данную строку, если p1, и пустую в противном случае.
+		\begin{alltt}
+			\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{plusminus}=\textcolor{Red}{function}()
+		\end{alltt}	
+	Возвращает упрощенное выражение, вставляя между числами необходимые знаки и убирая нулевые. 
 	\section{Работа с canvas}
-	\begin{alltt}
-		\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{drawLine}=\textcolor{Red}{function}(x1,y1,x2,y2)
-	\end{alltt}
+		\begin{alltt}
+			\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{drawLine}=\textcolor{Red}{function}(x1,y1,x2,y2)
+		\end{alltt}
 	Рисует линию из точки (x1,y1) в (x2,y2).
-	\begin{alltt}
-		\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{fillKrug}=\textcolor{Red}{function}(x,y,r)
-	\end{alltt}
+		\begin{alltt}
+			\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{fillKrug}=\textcolor{Red}{function}(x,y,r)
+		\end{alltt}
 	Рисует круг с центром в (x,y) и радиусом r. 
 		\begin{alltt}
-		\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{drawArrow}=\textcolor{Red}{function}(x1, y1, x2, y2, arrowType)
-	\end{alltt}%%TODO Узнать зачем arrowType
-	Рисует стрелку из точки (x1,y1) в (x2,y2)
-	\begin{alltt}
-		\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{drawCoordPlane }=\textcolor{Red}{function}(w, h, kl, text, mash)
-	\end{alltt}
+			\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{drawArrow}=\textcolor{Red}{function}(x1, y1, x2, y2, arrowType)
+		\end{alltt}%%TODO Узнать зачем arrowType
+	Рисует стрелку из точки (x1,y1) в (x2,y2).
+		\begin{alltt}
+			\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{drawCoordPlane }=\textcolor{Red}{function}(w, h, kl, text, mash)
+		\end{alltt}
 	Рисует координатную плоскость. w и h  \-- её размеры, kl \-- объект с полями hor и ver(высота и ширина клетки), text \-- объект с полями x1 и y1(единичные отрезки типа string), sh1 и sh2 (шрифты для x1, y1, по умолчанию 12px) и mash - масштаб изображения (по умолчанию равно 1).
-	\begin{alltt}
-		\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{setkaVer2  }=\textcolor{Red}{function}(h, w, hor, ver, mash)
-	\end{alltt}
+		\begin{alltt}
+			\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{setkaVer2  }=\textcolor{Red}{function}(h, w, hor, ver, mash)
+		\end{alltt}
 	Рисует прямоугольную сетку. w и h  \-- её размеры, hor и ver \-- высота и ширина клетки, mash - масштаб (по умолчанию равно 1).
-	\begin{alltt} 
-		\textcolor{Red}{function} \textcolor{Purple}{graph9AmarkCircles}(ct, XY, maxQuantity, radius)
-	\end{alltt}	
+		\begin{alltt} 
+			\textcolor{Red}{function} \textcolor{Purple}{graph9AmarkCircles}(ct, XY, maxQuantity, radius)
+		\end{alltt}	
 	Рисует maxQuantity точек в координатах из двумерно массива XY радиусом radius.
 	%%Переписать!
-	\begin{alltt}
-		\textcolor{Red}{function} \textcolor{Purple}{graph9AdrawFunction}(ct, f, o)
-	\end{alltt}	
+		\begin{alltt}
+			\textcolor{Red}{function} \textcolor{Purple}{graph9AdrawFunction}(ct, f, o)
+		\end{alltt}	
 	Рисует график f(x). Границы отображения задаются объектом o с полями maxX, maxY, minX, minY.
-	\section{Работа с матрицами}
-
-	\begin{alltt} 	
-		\textcolor{Red}{function} \textcolor{Purple}{multiplyMatrix}(A,B)
-	\end{alltt}
-	Умножает матрицу A на B, возвращает результат в матрице C.
-	\begin{alltt} 	
-		\textcolor{Red}{function} \textcolor{Purple}{Determinant}(A)
-	\end{alltt}
-	Возвращает определитель матрицы A.
-	\begin{alltt} 
-		\textcolor{Red}{function} \textcolor{Purple}{MatrixCofactor}(i,j,A)
-	\end{alltt}
-	Возвращает алгебраическое дополнение матрицы A.
-	\begin{alltt} 
-		\textcolor{Red}{function} \textcolor{Purple}{AdjugateMatrix}(A)
-	\end{alltt}
-	Возвращает союзную(присоединенную) матрицу.
-	\begin{alltt} 	
-		\textcolor{Red}{function} \textcolor{Purple}{rang_mat}(А)
-	Возвращает ранг матрицы A.
-	\end{alltt}
-	\begin{alltt} 	
-		\textcolor{Red}{function} \textcolor{Purple}{InverseMatrix}(B)
-	\end{alltt}
-	Возвращает обратную  к B матрицу.
-	\begin{alltt} 	
-		\textcolor{Red}{function} \textcolor{Purple}{generateMatrix}(stroki,stolbcy,min,max,p1)
-	\end{alltt}
-	Генерирует матрицу из случайных чисел.
 	\section{Вспомогательные функции}
-	\begin{alltt} 	
-		\textcolor{Red}{function} \textcolor{Purple}{sluchch}(n,k,s)
-	\end{alltt}
+		\begin{alltt} 	
+			\textcolor{Red}{function} \textcolor{Purple}{sluchch}(n,k,s)
+		\end{alltt}
 	Возвращает случайное число от n до k с шагом s(по умолчанию 1).
-	\begin{alltt} 	
-		\textcolor{Red}{function} \textcolor{Purple}{slKrome}(a,p1,p2,p3)
-	\end{alltt}
+		\begin{alltt} 	
+			\textcolor{Red}{function} \textcolor{Purple}{slKrome}(a,p1,p2,p3)
+		\end{alltt}
 	Возвращает случайное число, кроме a. Если a \-- массив, то не содержащееся в нём; Если число или строка, то не равное ему; Если функция, принимающая параметр - то не удовлетворяющее ей.
-	\begin{alltt} 	
-		\textcolor{Red}{function} \textcolor{Purple}{sluchDel}(a)
-	\end{alltt}
+		\begin{alltt} 	
+			\textcolor{Red}{function} \textcolor{Purple}{sluchDel}(a)
+		\end{alltt}
 	Случайный делитель числа a.
-	\begin{alltt} 	
-		\textcolor{Red}{function} \textcolor{Purple}{sluchiz}(a,n)
-	\end{alltt}
+		\begin{alltt} 	
+			\textcolor{Red}{function} \textcolor{Purple}{sluchiz}(a,n)
+		\end{alltt}
 	Возвращает массив из n случайных не повторяющихся элементов массива a. 
-	\begin{alltt} 	
-		\textcolor{Red}{function} \textcolor{Purple}{isZ}(n)
-	\end{alltt}
-	Возвращает true, если число n целое.
-	\begin{alltt} 	
-		\textcolor{Red}{function} \textcolor{Purple}{isPolnKvadr}(n)
-	\end{alltt}
-	Возвращает true, если число является полным квадратом.
-	\begin{alltt} 	
-		\textcolor{Red}{function} \textcolor{Purple}{slLetter}(b)
-	\end{alltt}
+		\begin{alltt} 	
+			\textcolor{Red}{function} \textcolor{Purple}{slLetter}(b)
+		\end{alltt}
 	Возвращает случайную букву английского алфавита.
-	\begin{alltt} 	
-		\textcolor{Red}{function} \textcolor{Purple}{intPoints}(f,o)
-	\end{alltt}
+		\begin{alltt} 	
+			\textcolor{Red}{function} \textcolor{Purple}{intPoints}(f,o)
+		\end{alltt}
   	Возвращает двумерный массив из всех целых точек графика f(x).  Границы нахождения точек задаются объектом o с полями maxX, maxY, minX, minY.
+  	
 \end{document}
