@@ -1,6 +1,7 @@
 \section{Глава вторая}
 \subsection{Функции используемые в проекте}
 В ходе работы над проектом "Час ЕГЭ" была создана нестандартная библиотека для упрощения многих задач. Далее представлены наиболее используемые из них.
+
 \textbf{Работа с массивами}
 
 \textbf{Многочлены}
@@ -44,9 +45,9 @@ TeX-представление многочлена.
 
 Перемешивает массив случайным образом. Если b, то ещё и рекурсивно на один уровень.
 
-\texttt{
+\hypertarget{iz}{\texttt{
 	\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{iz}=\textcolor{Red}{function}(p1)
-}
+}}
 
 Если p1 опущено, возвращает случайный элемент массива, иначе последовательность p1 неповторяющихся элементов массива.
 
@@ -174,9 +175,9 @@ TeX-представление корня из данного числа.
 
 \textbf{Работа с текстом}
 
-\texttt{
+\hypertarget{toZagl}{\texttt{
 	\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{toZagl}=\textcolor{Red}{function}()
-}
+}}
 
 Возвращает исходную строку с первой заглавной буквой.
 
@@ -212,9 +213,9 @@ TeX-представление корня из данного числа.
 
 Рисует стрелку из точки (x1,y1) в (x2,y2).
 
-\texttt{
+\hypertarget{drawCoordPlane}{\texttt{
 	\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{drawCoordPlane }=\textcolor{Red}{function}(w, h, kl, text, mash)
-}
+}}
 
 Рисует координатную плоскость. w и h  \-- её размеры, kl \-- объект с полями hor и ver(высота и ширина клетки), text \-- объект с полями x1 и y1(единичные отрезки типа string), sh1 и sh2 (шрифты для x1, y1, по умолчанию 12px) и mash - масштаб изображения (по умолчанию равно 1).
 
@@ -226,30 +227,29 @@ TeX-представление корня из данного числа.
 
 Рисует прямоугольную сетку. w и h  \-- её размеры, hor и ver \-- высота и ширина клетки, mash - масштаб (по умолчанию равно 1).
 
-\texttt{
+\hypertarget{graph9AmarkCircles}{\texttt{
 	\textcolor{Red}{function} \textcolor{Purple}{graph9AmarkCircles}(ct, XY, maxQuantity, radius)
-}
+}}
 
 Рисует maxQuantity точек в координатах из двумерно массива XY радиусом radius.
 %%Переписать!
 
-\texttt{
+\hypertarget{graph9AdrawFunction}{\texttt{
 	\textcolor{Red}{function} \textcolor{Purple}{graph9AdrawFunction}(ct, f, o)
-}
+}}
 
 Рисует график f(x). Границы отображения задаются объектом o с полями maxX, maxY, minX, minY.
 
 \textbf{Вспомогательные функции}
-
-\texttt{
+\hypertarget{sluchch}{\texttt{
 	\textcolor{Red}{function} \textcolor{Purple}{sluchch}(n,k,s)
-}
+}}
 
-Возвращает случайное число от n до k с шагом s(по умолчанию 1).
+Возвращает случайное число от n до k с шагом s по умолчанию 1).
 
-\texttt{
+\hypertarget{slKrome}{\texttt{
 	\textcolor{Red}{function} \textcolor{Purple}{slKrome}(a,p1,p2,p3)
-}
+}}
 
 Возвращает случайное число, кроме a. Если a \-- массив, то не содержащееся в нём; Если число или строка, то не равное ему; Если функция, принимающая параметр - то не удовлетворяющее ей.
 
@@ -271,10 +271,10 @@ TeX-представление корня из данного числа.
 
 Возвращает случайную букву английского алфавита.
 
-\texttt{
+\hypertarget{intPoints}{\texttt{
 	\textcolor{Red}{function} \textcolor{Purple}{intPoints}(f,o)
-}
+}}
 
-Возвращает двумерный массив из всех целых точек графика f(x).  Границы нахождения точек задаются объектом o с полями maxX, maxY, minX, minY.
+Возвращает двумерный массив из всех целых точек графика f(x). Границы нахождения точек задаются объектом o с полями maxX, maxY, minX, minY.
 
 \subsection{Вклад автора в расширение каталога}
