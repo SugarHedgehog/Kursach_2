@@ -1,7 +1,9 @@
 \documentclass[a4paper, 14pt]{extarticle}
-\usepackage[T2A,T1]{fontenc}
-\usepackage[lutf8x]{luainputenc}
-\usepackage[english,russian]{babel}
+\usepackage{fontspec}
+\setmainfont{CMU Serif}[Ligatures=TeX]
+\setmonofont{CMU Typewriter Text}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
 \usepackage[left=1cm,right=1cm,
 top=2cm,bottom=2cm]{geometry}
 %%% Дополнительная работа с математикой
@@ -9,13 +11,7 @@ top=2cm,bottom=2cm]{geometry}
 \usepackage{amsmath}
 \usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
 
-%% Шрифты
-\usepackage{euscript} % Шрифт Евклид
 \usepackage{mathrsfs} % Красивый матшрифт
-
-%% Свои команды
-\DeclareMathOperator{\sgn}{\mathop{sgn}}
-
 
 %% Перенос знаков в формулах (по Львовскому)
 \newcommand*{\hm}[1]{#1\nobreak\discretionary{}
@@ -23,7 +19,7 @@ top=2cm,bottom=2cm]{geometry}
 
 %%% Работа с картинками
 \usepackage{graphicx}  % Для вставки рисунков
-\graphicspath{{Изображения/}{image}}  % папки с картинками
+\graphicspath{image}  % папки с картинками
 \setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
 \setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
 \usepackage{wrapfig} % Обтекание рисунков и таблиц текстом
@@ -34,8 +30,6 @@ top=2cm,bottom=2cm]{geometry}
 \usepackage{multirow} % Слияние строк в таблице
 \usepackage{alltt}
 
-\usepackage{color} %% это для отображения цвета в коде
 \usepackage[dvipsnames]{xcolor}
-\usepackage{grffile}
 \usepackage{verbatim}
-
+\usepackage{hyperref}
