@@ -5,7 +5,7 @@
 \usepackage{polyglossia}
 \setdefaultlanguage{russian}
 \usepackage[left=1cm,right=1cm,
-top=2cm,bottom=2cm]{geometry}
+  top=2cm,bottom=2cm]{geometry}
 %%% Дополнительная работа с математикой
 \usepackage{amsfonts,amssymb,amsthm,mathtools} % AMS
 \usepackage{amsmath}
@@ -15,7 +15,7 @@ top=2cm,bottom=2cm]{geometry}
 
 %% Перенос знаков в формулах (по Львовскому)
 \newcommand*{\hm}[1]{#1\nobreak\discretionary{}
-	{\hbox{$\mathsurround=0pt #1$}}{}}
+  {\hbox{$\mathsurround=0pt #1$}}{}}
 
 %%% Работа с картинками
 \usepackage{graphicx}  % Для вставки рисунков
@@ -51,24 +51,24 @@ top=2cm,bottom=2cm]{geometry}
 }
 
 \lstset{
-   language=JavaScript,
-   extendedchars=true,
-   basicstyle=\footnotesize\ttfamily,
-   showstringspaces=false,
-   breakatwhitespace=true,
-   showspaces=false,
-   numbers=left,
-   numberstyle=\footnotesize,
-   numbersep=9pt,
-   tabsize=2,
-   keepspaces=true,
-   breaklines=true,
-   showtabs=false,
-   captionpos=b
-escapechar =| , % |«выпадаем» в LATEX|
-frame=tb , % рамка сверху и снизу
-commentstyle=\itshape , % шрифт для комментариев
-stringstyle =\bfseries 
+  language=JavaScript,
+  extendedchars=true,
+  basicstyle=\footnotesize\ttfamily,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  showspaces=false,
+  numbers=left,
+  numberstyle=\footnotesize,
+  numbersep=9pt,
+  tabsize=2,
+  keepspaces=true,
+  breaklines=true,
+  showtabs=false,
+  captionpos=b
+  escapechar =| ,
+  frame=single ,
+  commentstyle=\itshape ,
+  stringstyle =\bfseries
 }
 \usepackage{graphicx}
 \graphicspath{ {Grafs/} }
