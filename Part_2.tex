@@ -304,39 +304,7 @@ TeX-представление корня из данного числа.
 Возвращает двумерный массив из всех целых точек графика f(x). Границы нахождения точек задаются объектом o с полями maxX, maxY, minX, minY.
 \newpage
 \subsection{Вклад автора в расширение каталога}
-\begin{lstlisting}
-(function() {
-	'use strict';
-	NAinfo.requireApiVersion(0, 2);
-	let ves = sluchch(10, 100);
-	let pr1, pr2, answ;
-	do {
-		pr1 = sluchch(4, 20);
-		pr2 = sluchch(70, 90);
-		answ = (ves * (100 - pr1)) / (100 - pr2);
-	} while (!(answ * 100).isZ());
-	let pair = sklonlxkand([
-		['абрикос', 'курага'],
-		['виноград', 'изюм'],
-		[
-			['финик', 'яблоко', 'груша', 'банан', 'дыня', 'персик',
-				'инжир', 'манго', 'папайя', 'хурма', 'ананас', 'кокос',
-				'шиповник', 'клюква', 'барбарис', 'клубника', 'вишня'
-			].iz(),
-			'сухофрукт'
-		],
-	].iz());
-	NAtask.setTask({
-		text: 'При сушке ${pair[0].re} получается ${pair[1].ie}.' +
-			' Сколько килограммов ${pair[0].re} потребуется для получения 
-		${ves} килограммов ${pair[1].re}, ' +
-			'если ${pair[0].ie} содержит ${pr2}\% воды, а ${pair[1].ie} 
-		содержит ${pr1}\% воды?',
-		answers: answ,
-	});
-})();
-//Обзад  109083
-		\end{lstlisting}
+\lstinputlisting{codes/ex_109083.js}
 Примеры генерируемых задач:
 
 \vspace{\baselineskip}
@@ -364,50 +332,7 @@ TeX-представление корня из данного числа.
 }
 \vspace{\baselineskip}
 
-\begin{lstlisting}
-	(function() {
-		'use strict';
-		NAinfo.requireApiVersion(0, 2);
-		let child_1 = sklonlxkand(['Петя', 'Коля', 'Вася', 'Ваня', 'Саша', 'Женя', 'Никита', 'Арсений', 'Антон', 'Яков',
-				'Рома', 'Олег', 'Кирилл', 'Данил', 'Даниил', 'Арик', 'Ярик', 'Фома', 'Дима', 'Артём', 'Матвей', 'Максим', 'Игорь'
-			].iz()),
-			child_2 = ['Алёна', 'Саша', 'Женя', 'Вика', 'Арина', 'Маша', 'Лена', 'Оля', 'Катя', 'Марина', 'Аня', 'Наташа',
-				'Ирина', 'Настя', 'Ирма', 'Кристина', 'Ира', 'Мила', 'Тома', 'Любовь3', 'Вера', 'Надежда', 'Снежана',
-			].iz(),
-			work = sklonlxkand(['работа', 'тест'].iz()),
-			nosame = 'одинаковый',
-			answ = ['выполнять ', 'решать ', 'делать '].iz();
-		let job, doing, kr = '';
-		if (work.ie == 'тест') {
-			job = sklonlxkand('вопрос');
-			doing = 'отвечает';
-			answ = 'отвечать на ';
-		} else {
-			job = sklonlxkand(['задание', 'задача', 'пример', 'номер'].iz());
-			kr = ['контрольную', 'проверочную', 'экзаменационную'].iz();
-			doing = ['решает', 'делает'].iz();
-		}
-		let v1 = sluchch(5, 9),
-			v2 = v1 + 1,
-			razn;
-		if (v1 == 7)
-			razn = [30, 60].iz();
-		else
-			razn = sluchch(20, 60, 10);
-		if (work.ie == 'работа')
-			nosame = 'одинаковую';
-		NAtask.setTask({
-			text: `${child_1.ie} и ${child_2} выполняют ${nosame}  ${kr.esli(work.ie == 'работа')} ${work.ve}. ${child_2} ` +
-				`${doing}   за час  ${"на".esli(work.ie == 'тест')} ${v1} ${job.rm}   ${work.re}, а ${child_1.ie}` +
-				`${'на'.esli(work.ie == 'тест ')}  ${v2}.` +
-				` Они одновременно начали ${answ} ${job.vm}, ` +
-				`и  ${child_2}  закончила  ${work.ve}  позже  ${child_1.re}  на ${razn} ` +
-				`минут. Сколько   ${job.rm}   содержит   ${work.ie}?`,
-			answers: (razn * v1 * v2) / (60 * (v2 - v1)),
-		});
-	})();
-	//Обзад 99621
-\end{lstlisting}
+\lstinputlisting{codes/ex_99621.js}
 Примеры генерируемых задач:
 
 \vspace{\baselineskip}
@@ -437,72 +362,7 @@ TeX-представление корня из данного числа.
 }
 \vspace{\baselineskip}
 
-\begin{lstlisting}
-	(function() {
-	`use strict`;
-	NAinfo.requireApiVersion(0, 2);
-	let znam, chisl_1, chisl_2;
-	chisl_1 = Math.pow(sluchch(1, 5), 2);
-	chisl_2 = chisl_1 * Math.pow(sluchch(1, 10), 2);
-	znam = chisl_1 + chisl_2;
-
-	let ugol = om.latbukv.iz();
-	let k = sluchch(0, 100);
-	let graniz = [
-		[`(${k.texfracpi(1)};${(k+0.5).texfracpi(1)})`, 1, 1, `I`],
-		[`(${(k+0.5).texfracpi(1)};${(k+1).texfracpi(1)})`, -1, 2, `II`],
-		[`(${(k+1).texfracpi(1)};${(k+1.5).texfracpi(1)})`, 1, 3, `III`],
-		[`(${(k+1.5).texfracpi(1)};${(k+2).texfracpi(1)})`, -1, 4, `VI`],
-	].iz();
-	let zn_1, zn_2, zn_3, minus_1 = ``,
-		minus_2 = ``,
-		grelets = ``;
-	switch (sluchch(0, 1)) { 
-	case 0:
-		zn_1 = `\\tg`;
-		zn_2 = `\\cos`;
-		zn_3 = `\\sin`;
-		if ((graniz[2] == 2) || (graniz[2] == 3)) // cos<0? 
-			minus_1 = `-`;
-		if ((graniz[2] == 3) || (graniz[2] == 4)) { //sin<0?
-			grelets = '<';
-			minus_2 = `-`;
-		} else
-			grelets = `>`;
-		break;
-	case 1:
-		zn_1 = `\\ctg`;
-		zn_2 = `\\sin`;
-		zn_3 = `\\cos`;
-		if ((graniz[2] == 3) || (graniz[2] == 4)) //sin<0?
-			minus_1 = `-`;
-		if ((graniz[2] == 2) || (graniz[2] == 3)) // cos<0?
-		{
-			minus_2 = `-`;
-			grelets = `<`;
-		} else
-			grelets = `>`;
-		break;
-	}
-	let answ = graniz[1] * Math.sqrt(chisl_2 / chisl_1);
-	grelets = `(Угол ${ugol} принадлежит ${graniz[3]} четверти - $${zn_3}
-	{${ugol}}${grelets}0$)`
-
-	NAtask.setTask({
-		text: `Найдите $${zn_1}{${ugol}}$, если $${zn_2}{ ${ugol}}=
-		${minus_1}\\sqrt{\\frac{${chisl_1}}{${znam}}}$ и $${ugol}\\in 
-		${graniz[0]}$.`,
-		answers: answ,
-		analys: `Найдём $${zn_3}{${ugol}}=\\sqrt{1-(${minus_1}\\sqrt
-		\\frac{${chisl_1}}{${znam}}})^{2}=${minus_2}\\sqrt{
-			\\frac{${chisl_2}}{${znam}}}$${grelets}.` +
-			` Тогда $${zn_1}{${ugol}}=${` - `.esli(!graniz[2]%2)}
-			\\sqrt{\\frac{${chisl_2}}{${chisl_1}}}=${answ}$`,
-
-	});
-})();
-//Обзад  26775
-\end{lstlisting}
+\lstinputlisting{codes/ex_26775.js}
 Примеры генерируемых задач:
 
 \vspace{\baselineskip}
@@ -532,30 +392,7 @@ TeX-представление корня из данного числа.
 		VI четверти - $sin Q>0$). Тогда $\tg  Q=\sqrt{\frac{144}{9}}=-4$}
 }
 \vspace{\baselineskip}
-
-\begin{lstlisting}
-	(function() {
-	'use strict';
-	NAinfo.requireApiVersion(0, 2);
-	let answ=sluchch(-100,100,0.5);
-	let ugol_1=sluchch(1,90);
-	let ugol_2=ugol_1.pm()+90*sluchch(1,11,2);
-	ugol_1 += 90*sluchch(0,6,2);
-	let k_1=sluchch(0,1);
-	let k_2 = 1 - k_1;
-
-	let zn=['\\tg','\\ctg'];
-	
-	NAtask.setTask({
-		text: `Найдите значение выражения $${answ}${zn[k_1]}{${ugol_1}^\\circ} \\cdot ${zn[k_1]}{${ugol_2}^\\circ} $.`,
-		answers: answ, 
-		analys: `По формуле приведения $${zn[k_1]} ${ugol_2}^\\circ=${zn[k_1]}{(${ugol_1+ugol_2}^\\circ-${ugol_2}^\\circ)}=${zn[k_2]}
-		{${ugol_1}^\\circ}$.`+
-		` Тогда $ ${answ}${zn[k_1]}{${ugol_1}^\\circ} \\cdot${zn[k_2]}{${ugol_1}^\\circ}=${answ}$`,
-	});
-})();
-//Обзад  26771 26770
-\end{lstlisting}
+\lstinputlisting{codes/ex_26771.js}
 Примеры генерируемых задач:
 
 \vspace{\baselineskip}
@@ -583,58 +420,7 @@ TeX-представление корня из данного числа.
 		Тогда $-32\ctg195^{\circ}\cdot\tg195^{\circ}=-32$}}
 \vspace{\baselineskip}
 
-\begin{lstlisting}
-	(function() {
-	'use strict';
-	NAinfo.requireApiVersion(0, 0);
-	let kol = [[4,'четырёх'],[5, `пяти`],[8, `восьми`]].iz();
-	let chislo=kol.pop();
-	let k = sluchch(1, kol-1);
-	let person1 = [`Петя`, `Коля`, `Вася`, `Ваня`, `Никита`, `Арсений`, `Антон`, `Яков`,
-		`Рома`, `Олег`, `Кирилл`, `Данил`, `Даниил`, `Арик`, `Ярик`, `Фома`, `Дима`, `Артём`, `Матвей`, `Максим`, `Игорь`,
-	].iz(k);
-	let person2 = [`Алёна`, `Вика`, `Арина`, `Маша`, `Лена`, `Оля`, `Катя`, `Марина`, `Аня`, `Наташа`,
-		`Ирина`, `Настя`, `Ирма`, `Кристина`, `Ира`, `Мила`, `Тома`, `Любовь`, `Вера`, `Надежда`, `Снежана`,
-	].iz(kol - k);
-	let persons = person1.concat(person2).shuffle();
-	let uslov = [`${persons.iz()}`, `девочка`, `мальчик`, ].iz();
-	let must = `должен`;
-	if (person2.includes(uslov) || uslov == `девочка`)
-		must = `должна`;
-	let answ;
-	switch (uslov) {
-	case (`мальчик`):
-		answ = k / kol;
-		break;
-	case (`девочка`):
-		answ = (kol - k) / kol;
-		break;
-	default:
-		answ = 1 / kol;
-		break;
-	}
-	if (sl1()) {
-		uslov = `не ` + uslov;
-		answ = 1 - answ;
-	}
-	let children = ``;
-	for (let i = 0; i < kol - 1; i++) {
-		children += persons[i];
-		if (i != kol - 2)
-			children += `, `;
-		else
-			children += ` `;
-	}
-	children += `и ` + persons[kol - 1];
-	NAtask.setTask({
-		text: `${children} бросили жребий - кому начинать игру. Найдите вероятность того, что начинать игру ${must} будет ${uslov}.`,
-		answers: answ,
-		analys: `Жребий начать игру может выпасть каждому из ${chislo} детей. Вероятность того, что это будет ${uslov}, равна ${answ}.`,
-	});
-
-})();
-// 320169,320335,320343
-\end{lstlisting}
+\lstinputlisting{codes/ex_320169.js}
 Примеры генерируемых задач:
 
 \vspace{\baselineskip}
@@ -663,70 +449,7 @@ TeX-представление корня из данного числа.
 
 \vspace{\baselineskip}
 
-\begin{lstlisting}
-	(function() {
-		'use strict';
-		NAinfo.requireApiVersion(0, 0); 
-		let ill = sklonlxkand([`гепатит`, `криворучие`, `соннис`, `забыватикус`, `переленеус`, `шоколадодифицит`, `антилогизм`,
-			`диабет`, `Ёжико-вирус`, `перфектолиз`, `трудоголизм`, `хладоручие`, `жмотство`, `физико-зависимость`,
-			`Фентезикоз`,
-		]).iz();
-		let persons = sklonlxkand([`физик`, `химик`, `школьник`, `чудик`, `чиновник`, `президент`, `пациент`, `студент`,
-			`математик`,
-		]).iz();
-		let realRez, lozhRez, realIll, answ, prAnsw1, prAnsw2;
-		do {
-			realRez = sluchch(30, 95);
-			lozhRez = sluchch(2, 10);
-			realIll = sluchch(1, 95);
-			prAnsw1 = (realRez * realIll) / 10000;
-			prAnsw2 = (lozhRez * (100 - realIll)) / 10000;
-			answ = (realRez * realIll + lozhRez * (100 - realIll)) / 10000;
-		} while (!(answ * 10000.0).isZ());
-		let Rez;
-		if (sl1())
-			Rez = `положительным`;
-		else {
-			Rez = `отрицательным`;
-			answ = 1 - answ;
-		}
-		let veroyt = [`с вероятностью `, `в `];
-		if (sl1())
-			realRez /= 100;
-		if (sl1())
-			lozhRez /= 100;
-		if (sl1())
-			realIll /= 100;
-	
-		let find = [`вероятность`, `процент`];
-		if (sl1())
-			find.pop();
-		else {
-			find.shift();
-			answ *= 100;
-		}
-		NAtask.setTask({
-			text: `	Всем ${persons.dm} с подозрением на ${ill.ve} делают анализ крови. ` +
-				`Если анализ выявляет ${ill.ve}, то результат анализа называется положительным. ` +
-				`У больных ${ill.te} ${persons.rm} анализ даёт положительный результат ${veroyt[0].esli(realRez<1)} ${veroyt[1].esli(realRez>1)} ${realRez.ts()}${`\%`.esli(realRez>1)}. ` +
-				`Если ${persons.im} не болен ${ill.te}, то анализ может дать ложный положительный результат ${veroyt[0].esli(lozhRez<1)} ${veroyt[1].esli(lozhRez>1)} ${lozhRez.ts()}${`\%`.esli(lozhRez>1)}. ` +
-				`Известно, что ${realIll.ts()}${`\%`.esli(realIll>1)} ${persons.rm}, поступающих с подозрением на ${ill.ve}, действительно больны ${ill.te}. ` +
-				`Найдите ${find} того, что результат анализа у ${persons.rm}, поступившего в клинику с подозрением на ${ill.ve}, будет ${Rez}.`,
-			answers: answ,
-			analys: `Анализ ${persons.rm} может быть положительным по двум причинам:` +
-				` 1) ${persons.ie} болеет ${ill.te}, его анализ верен; 2) пациент не болеет ${ill.te}, его анализ ложен.`+
-			` По формуле условной вероятности: $${realRez.ts()}${`/100`.esli(realRez>1)}\\cdot${realIll.ts()}${`/100`.esli(realIll>1)} = ${prAnsw1.ts()}$`+
-			` и $${lozhRez.ts()}${`/100`.esli(lozhRez>1)}\\cdot(1-${realIll.ts()}${`/100`.esli(realIll>1)}) = ${prAnsw2.ts()}$. ` +
-			`События быть больным или быть здоровым образуют полную группу (они несовместны и одно из них непременно наступает),` +
-			` поэтому можно применить формулу полной вероятности. Тогда $${prAnsw1.ts()}+${prAnsw2.ts()}=${(prAnsw1+prAnsw2).ts()}$. `+
-			`${`Необходимо найти, что анализ будет отрицательным: $1-${(prAnsw1+prAnsw2).ts()}$. `.esli(Rez == `отрицательным`)} `+
-			`${`Так как нужно найти процент, умножим полученный ответ на 100: $${(prAnsw1+prAnsw2).ts()}\\cdot100=${answ.ts()}$`.esli(find==`процент`)} `+
-			`Ответ: $${answ.ts()}$`,
-		});
-	
-	})();
-	//  320207
-\end{lstlisting}
+\lstinputlisting{codes/ex_320207.js}
 Примеры генерируемых задач:
 
 \vspace{\baselineskip}
@@ -794,119 +517,7 @@ TeX-представление корня из данного числа.
 
 \vspace{\baselineskip}
 
-\begin{lstlisting}
-	retryWhileUndefined(function() {
-		NAinfo.requireApiVersion(0, 2);
-	
-		function fp(x) {
-			return k * x + d;
-		}
-	
-		function fs(x) {
-			return a * (x + b).sqrt() + c;
-		}
-	
-		let x1 = sluchch(1, 6).pm();
-		let x2 = sluchch(8, 20);
-		let y1 = sl(-6, 6);
-		let y2 = sl(0, 20).pm();
-		let k = (y1 - y2) / (x1 - x2);
-		if (!(k * 1000).isZ() || !k)
-			return;
-		let d = y1 - k * x1;
-		let b = slKrome([-x1, -x2].iz(), -6, 6, 0.5);
-		let a = (y1 - y2) / ((x1 + b).sqrt() - (x2 + b).sqrt());
-		if (!(a * 1000).isZ())
-			return;
-		let c = y1 - a * (x1 + b).sqrt();
-		let pointss = intPoints(fs, {
-			minX: -5,
-			maxX: 5,
-			minY: -5.5,
-			maxY: 5.5,
-			step: 1,
-		});
-		if (pointss.length < 3)
-			return;
-		let pointsp = intPoints(fp, {
-			minX: -5,
-			maxX: 5,
-			minY: -5.5,
-			maxY: 5.5,
-			step: 1,
-		});
-		if (pointsp.length < 2)
-			return;
-		let find, answ;
-		if (sl1()) {
-			answ = x2;
-			find = 'абсциссу';
-		} else {
-			answ = y2;
-			find = 'ординату';
-		}
-		let paint1 = function(ct) {
-			let h = 300;
-			let w = 300;
-			//Оси координат
-			ct.drawCoordPlane(w, h, {
-				hor: 1,
-				ver: 1
-			}, {
-				x1: '1',
-				y1: '1',
-				sh1: 13,
-			}, 20);
-			//График
-			ct.scale(20, -20);
-			ct.lineWidth = 0.1;
-			graph9AdrawFunction(ct, fs, {
-				minX: -6.5,
-				maxX: 7,
-				minY: -7,
-				maxY: 6,
-				step: 0.0005,
-			});
-			graph9AdrawFunction(ct, fp, {
-				minX: -6.5,
-				maxX: 7,
-				minY: -7,
-				maxY: 6,
-				step: 0.05,
-			});
-			//точки
-			graph9AmarkCircles(ct, pointss, 3, 0.15);
-			graph9AmarkCircles(ct, pointsp, 2, 0.15);
-			graph9AmarkCircles(ct, [
-				[x1, y1]
-			], 2, 0.15);
-			//буква
-			ct.fillStyle = "blue";
-			ct.font = "18px liberation_sans";
-			ct.scale(1 / 20, -1 / 20);
-			ct.fillText('A', 20 * x1 - 10, -20 * y1 - 10);
-		};
-		NAtask.setTask({
-			text: 'На рисунке изображены графики функций $f(x)=a\\sqrt{x' + ['+', '-'].iz() + 'b}+c$ и $g(x)=kx' + ['+', '-']
-				.iz() +
-				'd$,' +
-				' которые пересекаются в точках $A$ и $B$. Найдите ' + find + ' точки $B$.',
-			answers: answ,
-			analys: '$f(x)=' + (a + '\\sqrt{x+' + b + '}+' + c + '$').plusminus() + '<br>' +
-				'$g(x)=' + (k.ts() + 'x+' + d.ts()).plusminus() + '$<br>' +
-				'$A(' + x1 + ';' + y1 + ')$<br>' +
-				'$B(' + x2 + ';' + y2 + ')$',
-		});
-		chas2.task.modifiers.addCanvasIllustration({
-			width: 300,
-			height: 300,
-			paint: paint1,
-		});
-		return true;
-	}, 100000);
-	//50927103
-	\end{lstlisting}
-\newpage
+\lstinputlisting{codes/ex_50927103.js}
 Примеры генерируемых задач:
 
 \begin{figure}[h]
@@ -964,86 +575,7 @@ TeX-представление корня из данного числа.
 
 \vspace{\baselineskip}
 
-\begin{lstlisting}
-	retryWhileUndefined(function () {
-		NAinfo.requireApiVersion(0, 2);
-	
-		function variant(a, b, x) {
-			switch (trigfuncs) {
-				case 'sin':
-					return a * Math.sin(x * Math.PI / 2) + b;
-				case 'cos':
-					return a * Math.cos(x * Math.PI / 2) + b;
-				case 'tg':
-					return a * Math.tan(x * Math.PI / 2) + b;
-				case 'ctg':
-					return a * (1 / Math.tan(x * Math.PI / 2)) + b;
-			}
-		}
-	
-		function f(x) {
-			return 0.5 * variant(a, b, x);
-		}
-		let trigfuncs = ['sin', 'cos', 'tg', 'ctg'].iz();
-		let a = sluchch(1, 6).pm();
-		let b = sluchch(0, a).pm();
-		let find, answ;
-		if (sl1() && trigfuncs != 'tg' && trigfuncs != 'ctg') {
-			find = 'a';
-			answ = a;
-		} else {
-			find = 'b';
-			answ = b;
-		}
-		let X = [],
-			Y = [];
-		for (let i = -2; i < 4; i++)
-			if (2 * f(i) < 5 && 2 * f(i) > -6) {
-				X.push(i);
-				Y.push(f(i));
-			}
-		if (X.length < 2)
-			return;
-		let paint1 = function (ct) {
-			let h = 300;
-			let w = 300;
-			//Оси координат
-			ct.drawCoordPlane(w, h, {
-				hor: 2,
-				ver: 1
-			}, {
-				x1: 'π/2',
-				y1: '1',
-				sh1: 13,
-			}, 20);
-			//График
-			ct.scale(40, -40);
-			ct.lineWidth = 0.05;
-			graph9AdrawFunction(ct, f, {
-				minX: -2.6,
-				maxX: 4,
-				minY: -4,
-				maxY: 3,
-				step: 0.05,
-			});
-			//точки
-			graph9AmarkCircles(ct, [X, Y].T(), 2, 0.1);
-		};
-		NAtask.setTask({
-			text: 'На рисунке изображён график функции $f(x)=a\\' + trigfuncs + ' x+b$. Найдите $' + find + '$.',
-			answers: answ,
-			analys: '$f(x)=' + (a + '\\' + trigfuncs + ' x+' + b).replace('+0', '').plusminus() + '$',
-		});
-		chas2.task.modifiers.addCanvasIllustration({
-			width: 300,
-			height: 300,
-			paint: paint1,
-		});
-		return true;
-	}, 100000);
-	//509123 509130 509137 509143 509287 509295
-\end{lstlisting}
-\newpage
+\lstinputlisting{codes/ex_509123.js}
 Примеры генерируемых задач:
 
 \begin{figure}[h]
