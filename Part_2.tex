@@ -1,4 +1,4 @@
-\section{Глава вторая}
+\section{Глава вторая}\label{2sect}
 \subsection{Функции, используемые в проекте}
 За 9 лет работы над проектом «Час ЕГЭ» была разработан нестандартная библиотека для упрощения многих задач. Далее представлены наиболее используемые функции из неё.
 
@@ -52,7 +52,7 @@ TeX-представление многочлена.
 		\textcolor{Orange}{Array}.\textcolor{Blue}{prototype}.\textcolor{Purple}{iz}=\textcolor{Red}{function}(p1)
 	}}
 
-Если p1 опущено, возвращает случайный элемент массива, иначе последовательность p1 неповторяющихся элементов массива.
+Если p1 опущено, возвращает случайный элемент массива, иначе массив p1 неповторяющихся элементов массива.
 
 \textbf{Матрицы}
 
@@ -154,18 +154,18 @@ TeX-представление многочлена.
 }
 %%зачем? и пример
 Приводит число к стандартному виду (с десятичной запятой и не более чем 10 знаками после неё).
-Необходимо для отсечения лишней точности.
+Необходимо для отсечения ложной точности.
 
-Пример:
+Пример:%%0.1+0.2
 \begin{lstlisting}[frame=none]
-	let number1=1/33;
-	let number2=(1/33).ts()
+	let number1=0.7+0.1;
+	let number2=(0.7+0.1).ts()
 \end{lstlisting}
 \fbox{
 	\parbox{10cm}{
-		$number1=0.030303030303030304$
+		$number1=0.7999999999999999$
 
-		$number2=0,0303030303$
+		$number2=0,8$
 	}}
 
 	\vspace{\baselineskip}
@@ -197,7 +197,7 @@ TeX-представление корня из данного числа.
 
 Возвращает true, если число является полным квадратом.
 
-\textbf{Работа с текстом}
+\textbf{Работа со строками}
 
 \hypertarget{toZagl}{\texttt{
 		\textcolor{Orange}{Number}.\textcolor{Blue}{prototype}.\textcolor{Purple}{toZagl}=\textcolor{Red}{function}()
@@ -241,7 +241,7 @@ TeX-представление корня из данного числа.
 		\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{drawCoordPlane }=\textcolor{Red}{function}(w, h, kl, text, mash)
 	}}
 
-Рисует координатную плоскость. w и h  \-- её размеры, kl \-- объект с полями hor и ver(высота и ширина клетки), text \-- объект с полями x1 и y1(единичные отрезки типа string), sh1 и sh2 (шрифты для x1, y1, по умолчанию 12px) и mash - масштаб изображения (по умолчанию равно 1).
+Рисует координатную плоскость. w и h  \--- её размеры, kl \--- объект с полями hor и ver (высота и ширина клетки), text \-- объект с полями x1 и y1(единичные отрезки типа string), sh1 и sh2 (шрифты для x1, y1, по умолчанию 12px) и mash - масштаб изображения (по умолчанию равно 1).
 
 \texttt{
 	\textcolor{Orange}{CanvasRenderingContext2D}.\textcolor{Blue}{prototype}.\textcolor{Purple}{setkaVer2}=
@@ -249,13 +249,13 @@ TeX-представление корня из данного числа.
 	\textcolor{Red}{function}(h, w, hor, ver, mash)
 }
 
-Рисует прямоугольную сетку. w и h  \-- её размеры, hor и ver \-- высота и ширина клетки, mash - масштаб (по умолчанию равно 1).
+Рисует прямоугольную сетку. w и h  \--- её размеры, hor и ver \--- высота и ширина клетки, mash - масштаб (по умолчанию равно 1).
 
 \hypertarget{graph9AmarkCircles}{\texttt{
 		\textcolor{Red}{function} \textcolor{Purple}{graph9AmarkCircles}(ct, XY, maxQuantity, radius)
 	}}
 
-Рисует maxQuantity точек в координатах из двумерно массива XY радиусом radius.
+Изображает не более maxQuantity точек в координатах из двумерно массива XY в виде кругов радиусом radius.
 %%Переписать!
 
 \hypertarget{graph9AdrawFunction}{\texttt{
@@ -270,20 +270,20 @@ TeX-представление корня из данного числа.
 		\textcolor{Red}{function} \textcolor{Purple}{sluchch}(n,k,s)
 	}}
 
-Возвращает случайное число от n до k с шагом s по умолчанию 1).
+Возвращает случайное число от n до k с шагом s (по умолчанию 1).
 Эта функция используется настолько часто, что для неё была придумана сокращённая форма sl().
 
 \hypertarget{slKrome}{\texttt{
 		\textcolor{Red}{function} \textcolor{Purple}{slKrome}(a,p1,p2,p3)
 	}}
 
-Возвращает случайное число, кроме a. Если a \-- массив, то не содержащееся в нём; Если число или строка, то не равное ему; Если функция, принимающая параметр - то не удовлетворяющее ей.
+Возвращает случайное число, кроме a. Если a \--- массив, то не содержащееся в нём; если число или строка, то не равное ему; Если функция, принимающая параметр - то не удовлетворяющее ей.
 
 \texttt{
 	\textcolor{Red}{function} \textcolor{Purple}{sluchDel}(a)
 }
 
-Случайный делитель числа a.
+Возвращает случайный делитель числа a.
 
 \texttt{
 	\textcolor{Red}{function} \textcolor{Purple}{sluchiz}(a,n)
@@ -331,8 +331,9 @@ TeX-представление корня из данного числа.
 		81\% воды, а изюм содержит 5\% воды?}%
 }
 \vspace{\baselineskip}
-
+\newpage
 \lstinputlisting{codes/ex_99621.js}
+\newpage
 Примеры генерируемых задач:
 
 \vspace{\baselineskip}
@@ -392,6 +393,7 @@ TeX-представление корня из данного числа.
 		VI четверти - $sin Q>0$). Тогда $\tg  Q=\sqrt{\frac{144}{9}}=-4$}
 }
 \vspace{\baselineskip}
+\newpage
 \lstinputlisting{codes/ex_26771.js}
 Примеры генерируемых задач:
 
@@ -419,7 +421,7 @@ TeX-представление корня из данного числа.
 		По формуле приведения $\ctg285^{\circ}=\ctg(480^{\circ}-285^{\circ})=\tg195^{\circ}$.
 		Тогда $-32\ctg195^{\circ}\cdot\tg195^{\circ}=-32$}}
 \vspace{\baselineskip}
-
+\newpage
 \lstinputlisting{codes/ex_320169.js}
 Примеры генерируемых задач:
 
@@ -538,6 +540,7 @@ TeX-представление корня из данного числа.
 	}}
 
 \vspace{\baselineskip}
+\newpage
 \begin{figure}[h]
 	\includegraphics[width=0.4\textwidth]{2.PNG}
 \end{figure}
@@ -583,29 +586,30 @@ TeX-представление корня из данного числа.
 \end{figure}
 \fbox{
 	\parbox{17cm}{
-		На рисунке изображён график функции $f(x)=a\ctg x+b$. Найдите $b$.
+		На рисунке изображён график функции $f(x)=a \ctg x+b$. Найдите $b$.
 
 		$f(x)=2\ctg x-2$
 	}}
 
 \vspace{\baselineskip}
+\newpage
 \begin{figure}[h]
 	\includegraphics[width=0.4\textwidth]{5.PNG}
 \end{figure}
 \fbox{
 	\parbox{17cm}{
-		На рисунке изображён график функции $f(x)=a\cos x+b$. Найдите $a$.
+		На рисунке изображён график функции $f(x)=a \cos x+b$. Найдите $a$.
 
 		$f(x)=-4\cos x+2$
 	}}
 
 \vspace{\baselineskip}
-\newpage
 \begin{figure}[h]
 	\includegraphics[width=0.4\textwidth]{6.PNG}
 \end{figure}
 \fbox{
 	\parbox{17cm}{
-		На рисунке изображён график функции $f(x)=a\sin x+b$. Найдите $b$.
-		$f(x)=6\sin x-3$
+		На рисунке изображён график функции $f(x)=a \sin x+b$. Найдите $b$.
+		$f(x)=6 \sin x-3$
 	}}
+	%%sin прямым шрифтом
